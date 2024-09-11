@@ -9,8 +9,9 @@ class StudentManager{
     //addstudent
    async addnewStudent(student){
         await this.loadStudents();
+        if(!student.name) throw new Error("Name is required");
         //from file to app
-        this.students.push({...student,id:Date.now()});
+        this.students.push({...student,id:Date.now()+Math.floor(Math.random()*100)});
         await this.saveStudents();
     }
     //removestudent
@@ -18,8 +19,12 @@ class StudentManager{
         await this.loadStudents();
         // this.students= this.students.filter(student=>student.id!==id);
         const index= this.students.findIndex(student=>student.id===id);
-        this.students.splice(index,1);
-        await this.saveStudents();
+        if(index>-1) {
+            this.students.splice(index,1);
+            await this.saveStudents();
+
+        }throw new Error("Student not found");
+        
     }
     async removeAllStudents(){
         this.students=[];
@@ -84,11 +89,19 @@ class StudentManager{
     }
     async getStudentById(id){
         await this.loadStudents();
-        return this.students.find(student=>student.id===id);
+        const studentobj=this.students.find(student=>student.id===id);
+        if(studentobj){
+            return studentobj;
+        }
+        throw new Error("Student not found");
     }
    async filterStudentsByAge(startage,endage){
         await this.loadStudents();
-        return this.students.filter(student=>student.age>=startage && student.age<=endage)
+        const filteredStudents= this.students.filter(student=>student.age>=startage && student.age<=endage);
+        if(filteredStudents.length>0){
+            return filteredStudents;
+        }
+        throw new Error("No students found within the specified age range");
     }
    
 }

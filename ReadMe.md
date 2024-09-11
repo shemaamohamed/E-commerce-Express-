@@ -1,2 +1,3 @@
 --async functions to avoid overlap
 -- if functions related to one model(container)
+--request (reading ? source ?) (validate ? shape ?)-------------------------(db)
