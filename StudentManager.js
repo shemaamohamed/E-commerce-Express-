@@ -9,7 +9,7 @@ class StudentManager{
     //addstudent
    async addnewStudent(student){
         await this.loadStudents();
-        if(!student.name) throw new Error("Name is required");
+        // if(!student.name) throw new Error("Name is required");
         //from file to app
         this.students.push({...student,id:Date.now()+Math.floor(Math.random()*100)});
         await this.saveStudents();
@@ -89,11 +89,11 @@ class StudentManager{
     }
     async getStudentById(id){
         await this.loadStudents();
-        const studentobj=this.students.find(student=>student.id===id);
+        const studentobj=this.students.find(student=>student.id.toString() === id.toString());
         if(studentobj){
             return studentobj;
         }
-        throw new Error("Student not found");
+        
     }
    async filterStudentsByAge(startage,endage){
         await this.loadStudents();
