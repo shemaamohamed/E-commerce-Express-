@@ -1,8 +1,28 @@
 const express=require("express")
 const StudentManager=require('./StudentManager');
 const app= express();
+const Ajv = require("ajv")
+const ajv = new Ajv() // options can be passed, e.g. {allErrors: true}
+
+
+
+const studentschema = {
+  type: "object",
+  properties: {
+    name: {type: "string"},
+    age: {
+        type: "number",
+        minimum:5,
+        maximum:60,
+    }
+  },
+  required: ["name","age"],
+  additionalProperties: false
+}
+const validatestudent = ajv.compile(studentschema)
 const studentManager= new StudentManager();
 app.use(express.json());
+const Port= process.env.PORT||3000
 
 app.get("/",(req,res)=>{
     res.send("hello world")
@@ -45,11 +65,20 @@ app.delete("/students/:id",async(req, res)=>{
 
 app.post("/students",async(req,res)=>{
     const data=req.body;
-    console.log(data);
-    await studentManager.addnewStudent(data);
-    res.status(200).json("success");
-})
+    const valid= validatestudent(data)
+    if(valid){
+        await studentManager.addnewStudent(data);
+        res.status(200).json("success");
+        
+    }else{
+        console.log('invalid data')
+        res.status(400).json("invalid data");
+    }
+   
+    }
+   
+)
 
-app.listen(3000,()=>{
+app.listen(Port,()=>{
     console.log("server is running on port 3000")
 })

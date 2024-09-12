@@ -1,6 +1,9 @@
 //Encupsolation
+const { v4: uuidv4 } = require('uuid');
+
 const fs = require("fs").promises;
 const path = require('path')
+
 const dataFilepath= path.join(__dirname,'students.json')
 class StudentManager{
     constructor(){
@@ -11,7 +14,7 @@ class StudentManager{
         await this.loadStudents();
         // if(!student.name) throw new Error("Name is required");
         //from file to app
-        this.students.push({...student,id:Date.now()+Math.floor(Math.random()*100)});
+        this.students.push({...student,id:uuidv4()});
         await this.saveStudents();
     }
     //removestudent

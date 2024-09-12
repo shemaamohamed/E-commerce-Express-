@@ -1,7 +1,7 @@
 --async functions to avoid overlap
 -- if functions related to one model(container)
 --request (reading ? source ?) (validate ? shape ?)-------------------------(db)
--- options (valid to connect (get-post? from browser))
+-- options (valid to connect (get-post? from browser)) Input Validation-Data Type Validation-Range Validation
 ![alt text](image.png)
 200 ok
 201 created (post -put)

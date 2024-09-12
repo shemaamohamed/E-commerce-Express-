@@ -9,6 +9,8 @@
   "author": "shimaa mohamed",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.20.0"
+    "ajv": "^8.17.1",
+    "express": "^4.20.0",
+    "uuid": "^10.0.0"
   }
 }
