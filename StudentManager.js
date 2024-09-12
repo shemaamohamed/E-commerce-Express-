@@ -18,12 +18,12 @@ class StudentManager{
     async removeStudent(id){
         await this.loadStudents();
         // this.students= this.students.filter(student=>student.id!==id);
-        const index= this.students.findIndex(student=>student.id===id);
+        const index= this.students.findIndex(student=>student.id.toString()===id.toString());
         if(index>-1) {
             this.students.splice(index,1);
             await this.saveStudents();
 
-        }throw new Error("Student not found");
+        }
         
     }
     async removeAllStudents(){
@@ -62,7 +62,7 @@ class StudentManager{
 
     async updateoneStudent(id, updatedStudent){
         await this.loadStudents();
-        const index= this.students.findIndex(student=>student.id===id);
+        const index= this.students.findIndex(student=>student.id.toString()===id.toString());
         if(index!==-1){
             const student= this.students[index];
             this.students[index]={...student,...updatedStudent};
@@ -101,7 +101,6 @@ class StudentManager{
         if(filteredStudents.length>0){
             return filteredStudents;
         }
-        throw new Error("No students found within the specified age range");
     }
    
 }

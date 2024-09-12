@@ -44,7 +44,7 @@ async function filterStudentsByAge(from,to){
    const filteredStudents= await studentManager.filterStudentsByAge(from, to);
    console.log(filteredStudents);
 }
-filterStudentsByAge(20,25);
+filterStudentsByAge(20,21);
 // removeAllStudents();
 // removeStudent(1726081130924)
 
