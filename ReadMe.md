@@ -15,3 +15,4 @@ client side eror
 405 methot not allowed (delete xx)
 ---------------
 request ..... body |params.id :id |query ?x=5&&y=6 (to convert string into number + or Number())
+![alt text](image-1.png)

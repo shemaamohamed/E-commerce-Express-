@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Classic T-Shirt",
+    "description": "A comfortable cotton t-shirt available in multiple colors.",
+    "price": 15.99,
+    "category": "Tops",
+    "brand": "BasicWear"
+  },
+  {
+    "id": 2,
+    "name": "Denim Jeans",
+    "description": "Slim-fit denim jeans with a classic five-pocket design.",
+    "price": 45,
+    "category": "Bottoms",
+    "brand": "UrbanDenim"
+  },
+  {
+    "id": 3,
+    "name": "Hooded Sweatshirt",
+    "description": "A cozy hooded sweatshirt with a front pocket and drawstring.",
+    "price": 35.5,
+    "category": "Outerwear",
+    "brand": "ComfyClo"
+  },
+  {
+    "id": 4,
+    "name": "Summer Dress",
+    "description": "A lightweight summer dress with floral patterns.",
+    "price": 50,
+    "category": "Dresses",
+    "brand": "SunnyStyles"
+  },
+  {
+    "id": 5,
+    "name": "Chino Shorts",
+    "description": "Casual chino shorts with a relaxed fit, perfect for summer.",
+    "price": 30,
+    "category": "Bottoms",
+    "brand": "CoolCasuals"
+  },
+  {
+    "name": "Trench Coat",
+    "description": "A classic trench coat with a belted waist and water-resistant fabric.",
+    "price": 180,
+    "category": "Outerwear",
+    "brand": "ClassicWear",
+    "id": "1e866ef8-7574-4a6f-9ece-004fd2011b56"
+  }
+]
