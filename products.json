@@ -46,5 +46,29 @@
     "category": "Outerwear",
     "brand": "ClassicWear",
     "id": "1e866ef8-7574-4a6f-9ece-004fd2011b56"
+  },
+  {
+    "name": "Trench Coat",
+    "description": "A classic trench coat with a belted waist and water-resistant fabric.",
+    "price": 500,
+    "category": "Outerwear",
+    "brand": "ClassicWear",
+    "id": "0930c00d-149f-4604-a152-a6ec78590e85"
+  },
+  {
+    "name": "Trench Coat",
+    "description": "A classic trench coat with a belted waist and water-resistant fabric.",
+    "price": 500,
+    "category": "Outerwear",
+    "brand": "ClassicWear",
+    "id": "c87b6a61-b6a6-4720-8c2a-63d6fb447385"
+  },
+  {
+    "name": "Trench Coat",
+    "description": "A classic trench coat with a belted waist and water-resistant fabric.",
+    "price": 500,
+    "category": "Outerwear",
+    "brand": "ClassicWear",
+    "id": "094ad9ee-ffd6-43d8-b026-34efa4f6bf77"
   }
 ]
