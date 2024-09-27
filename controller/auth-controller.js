@@ -37,7 +37,10 @@ const login = async (req, res) => {
     }
     try {
 
-        res.status(200).json({message:"Login done "})
+        res.status(200).json({message:"Login done ",
+            username:isuser.username,
+            _id:isuser._id
+        })
             
 
         
