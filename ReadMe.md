@@ -16,3 +16,5 @@ client side eror
 ---------------
 request ..... body |params.id :id |query ?x=5&&y=6 (to convert string into number + or Number())
 ![alt text](image-2.png)
+![alt text](image.png)
+![alt text](image-1.png)

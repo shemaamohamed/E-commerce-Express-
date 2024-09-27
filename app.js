@@ -1,42 +1,27 @@
 const express=require("express")
 const cors = require('cors');
-const productsRoutes=require('./product-routes');
+const apiRoutes = require("./routes/api-routes");
+const connectDB = require("./configs/database");
+const logMiddleware = require("./middlewares/log-middleware");
+const erorMiddleware = require("./middlewares/eror-middleware");
 const app= express();
+connectDB();
 require("dotenv").config();
-
-
-
-
+const Port= +process.env.PORT||3000;
 //third party middleware
 const corsOptions ={
-    origin:'*', //control the accepted domains to access our end point
-    
+    origin:'*',    
 }
 //Third-Party-Middleware
 app.use(cors(corsOptions));
 //built-in middleware
 app.use(express.json());
-const Port= +process.env.PORT||3000;
 //Application-Middleware
-app.use((request,response,next)=>{
-    console.log(`${new Date().toString()}-${request.method}-${request.url}`);
-    next();
-}
-)
-
-app.use("/products",productsRoutes);
-
-
-app.get("/",(req,res)=>{
-    res.send("hello world")
-})
+app.use(logMiddleware)
+app.use("/api",apiRoutes);
 
 //ErorHandling-middleware
-app.use((error,req,res,next)=>{
-    console.log(error);
-    res.status(500).send("something went wrong!")
-})
-
+// app.use(erorMiddleware)
 app.listen(Port,()=>{
-    console.log("server is running on port 3000")
+    console.log(`server is running on port ${Port}`)
 })
